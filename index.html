@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>MON JA CAI - User interface Designer</title>
+    </head>
+    <body>
+    <style>
+        body {
+            font-size: 14px;
+            margin: 0;
+        }
+        .main {
+            padding: 0;
+            text-align: left;
+         }
+        .main-container {
+            content: "";
+            text-align: left;
+            padding-left: 6%;
+        }
+        .main-content {
+            width: 51%;
+            background-color: #272b31;
+            padding-top: 151px;
+            display: table-cell;
+        }
+        .contact_1 {
+            color: white;
+            font-weight: 400;
+            line-height: 33px;
+        }
+        .main-contact {
+            width: 49%;
+            background-color: white;
+            height: 100%;
+            display: table-cell;
+        }
+        h1 {
+            color: #f8f8f8;
+            font-size: 4.28em;
+            font-weight: 700;
+            line-height: 1.316em;
+            text-transform: uppercase;
+        }
+        h2 {
+            color: #68c3a3;
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 32px;
+            text-transform: uppercase;
+        }
+        .main-description {
+            color: #f7f7f7;
+            padding-top: 34px;
+            padding-bottom: 59px;
+        }
+        .main-sign {
+            padding-right: 237px;
+            padding-bottom: 45px;
+            background:  url('data:image/png;base64,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') no-repeat;
+        }
+        .send {
+            margin-bottom: 20%;
+            width: 200px;
+            height: 57px;
+            background-color: transparent;
+            border: 0;
+            color: white;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 28px;
+            text-transform: uppercase;
+            margin-right: 34px;
+        }
+        .download {
+            margin-bottom: 5.24%;
+            width: 200px;
+            height: 57px;
+            background-color: transparent;
+            border: 0;
+            color: #f3f3f3;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 28px;
+            text-transform: uppercase;
+        }
+    </style>
+        <header>
+            
+<header>
+    <section class="main">
+    <div class="grdien_21">
+        <div class="main-content main-container">
+            <h1 class="animated fadeInDownBig">MON JA CAI</h1>
+            <h2 class="animated fadeInDownBig">User interface Designer</h2>
+            <p class="main-description animated fadeInLeftBig">Enthusiastically revolutionize user friendly supply chains for quality e-commerce.
+                Continually enhance premier resources after unique customer service. Uniquely pontificate ubiquitous
+                functionalities without long-term high-impact processes.</p>
+            <img src="img/sing_header.png" alt="" class="main-sign animated zoomInRight">
+            <div class="button_main">
+                <a href="#" class="send animated zoomInUp">Send me a message</a>
+                <a href="#" class="download animated zoomInDown" download>download my cv</a>
+            </div>
+        </div>
+        <div class="main-contact animated fadeInRightBig">
+            <ul class="contact_1 animated fadeInDownBig">
+                <li>Name: Abs Voch</li>
+                <li>Address: 12/A Abash hin, Dhaka,</li>
+                <li>Phone: (088) 017 314 628 58</li>
+                <li>Date of birth: 05 Dec 1993</li>
+                <li>BD	Nationality:Bangladeshi</li>
+                <li>Email:binburhan@gmail.com</li>
+            </ul>
+            <ul class="social-links animated fadeInDownBig">
+                <li class="boxx"><a href=""><i class="fb"></i></a></li>
+                <li class="boxx"><a href=""><i class="twiter"></i></a></li>
+                <li class="boxx"><a href=""><i class="bench"></i></a></li>
+                <li class="boxx"><a href=""><i class="boll"></i></a></li>
+                <li class="boxx"><a href=""><i class="pin"></i></a></li>
+            </ul>
+            <div class="grdien_1"></div>
+        </div>
+    </div>
+
+</section>
+    <nav class="mobile-menu" id="menu">
+
+    <label for="show-menu" class="show-menu"><span>MON JA CAI</span><div class="lines"></div></label>
+    <input type="checkbox" id="show-menu">
+
+    <ul class="nav-list">
+        
+        <li class="nav-list__item  b">
+            <a href="#main" class="nav-list__link page-scroll">HOME</a>
+        </li>
+        
+        <li class="nav-list__item  b">
+            <a href="#aboutme" class="nav-list__link page-scroll">ABOUT</a>
+        </li>
+        
+        <li class="nav-list__item  b">
+            <a href="#resume" class="nav-list__link page-scroll">RESUME</a>
+        </li>
+        
+        <li class="nav-list__item  b">
+            <a href="#skills" class="nav-list__link page-scroll">SKILLS</a>
+        </li>
+        
+        <li class="nav-list__item  b">
+            <a href="#work" class="nav-list__link page-scroll">WORK</a>
+        </li>
+        
+        <li class="nav-list__item  b">
+            <a href="#blog" class="nav-list__link page-scroll">BLOG</a>
+        </li>
+        
+        <li class="nav-list__item  b">
+            <a href="#contacts" class="nav-list__link page-scroll">CONTACT</a>
+        </li>
+        
+    </ul>
+</nav>
+</header>
+
+        </header>
+        <main>
+            
+    <section id="aboutme" class="about_me section--wtitle">
+    <div class="wrap">
+        <div class="container">
+            <h2 class="title" data-aos="flip-up" data-aos-duration="1300">about me</h2>
+            <div class="title__i">
+                <svg class="title-svg" xmlns="http://www.w3.org/2000/svg" width="113" height="14" viewBox="0 0 113 14">
+                    <path id="title-svg-icon" fill='#e1e1e1' d="M50.61.56l5.664 5.65c.39.39.39 1.02 0 1.41l-5.665 5.65c-.392.39-1.026.39-1.417
+                 0l-5.665-5.65c-.392-.39-.392-1.02 0-1.41L49.193.56c.39-.39 1.025-.39 1.416 0zM65.63.56l5.666 5.65c.39.39.39 1.02
+                  0 1.41l-5.665 5.65c-.39.39-1.025.39-1.416 0L58.55 7.62c-.392-.39-.392-1.02 0-1.41L64.213.56c.39-.39 1.026-.39
+                   1.417 0zM78.943 6.92v-1h34.05v1zM.83 6.92v-1h34.05v1z"
+                    /></svg>
+            </div>
+            <div class="resume-content">
+                <h3 class="subtitle resume-subtitle">Objective</h3>
+                <p class="article">Globally incubate functional customer service whereas state of the art niche markets. Uniquely underwhelm focused <br>
+                    communities with functionalized core competencies. Progressively unleash vertical technology with global e-markets. <br>
+                    Collaboratively optimize highly efficient quality vectors and real-time testing procedures. </p>
+                <h3 class="subtitle resume-subtitle">what i do?</h3>
+                <div class="icon_art">
+                    <div class="icon_border">
+                        <div class="icon_container">
+                        <img src="img/mob.png" alt="" class="ab_icon">
+                        <p class="ab_sign">UI DESIGN</p>
+                            </div>
+                    </div>
+                    <div class="icon_border">
+                        <div class="icon_container">
+                        <img src="img/pen.png" alt="" class="ab_icon">
+                        <p class="ab_sign">GRAPHIC DESIGN</p>
+                        </div>
+                    </div>
+                    <div class="icon_border">
+                        <div class="icon_container">
+                        <img src="img/send_ab.png" alt="" class="ab_icon">
+                        <p class="ab_sign">BRANDING DESIGN</p>
+                            </div>
+                    </div>
+                    <div class="icon_border">
+                        <div class="icon_container">
+                        <img src="img/monitor.png" alt="" class="ab_icon">
+                        <p class="ab_sign">WEB DESIGN</p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+
+<section id="resume" class="section section--wtitle">
+    <div class="wrap">
+        <div class="container">
+            <h2 class="title" data-aos="flip-up" data-aos-duration="1300">resume</h2>
+            <div class="title__i">
+                <svg class="title-svg" xmlns="http://www.w3.org/2000/svg" width="113" height="14" viewBox="0 0 113 14">
+                    <path id="title-svg-icon" fill='#e1e1e1' d="M50.61.56l5.664 5.65c.39.39.39 1.02 0 1.41l-5.665 5.65c-.392.39-1.026.39-1.417
+                 0l-5.665-5.65c-.392-.39-.392-1.02 0-1.41L49.193.56c.39-.39 1.025-.39 1.416 0zM65.63.56l5.666 5.65c.39.39.39 1.02
+                  0 1.41l-5.665 5.65c-.39.39-1.025.39-1.416 0L58.55 7.62c-.392-.39-.392-1.02 0-1.41L64.213.56c.39-.39 1.026-.39
+                   1.417 0zM78.943 6.92v-1h34.05v1zM.83 6.92v-1h34.05v1z"
+                    />
+                </svg>
+            </div>
+            <div class="resume-content">
+                <h3 class="subtitle resume-subtitle">Education</h3>
+                <div class="resume__steps">
+                    
+                      
+<div class="resume__steps__item ">
+    <div class="item_wrap clearfix">
+        <div class="resume__steps__item__description" data-aos="fade-right" data-aos-duration="1300">
+            <p class="resume__steps__item__description-name b">Secondary school certificate</p>
+            <p class="resume__steps__item__description-place b">Salimganj A R school, Dhaka, BD</p>
+            <p class="resume__steps__item__description-text">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>
+        </div>
+        <div class="resume__steps__item__data b">2004 - 2010</div>
+    </div>
+</div>
+
+                    
+                      
+<div class="resume__steps__item even">
+    <div class="item_wrap clearfix">
+        <div class="resume__steps__item__description" data-aos="fade-right" data-aos-duration="1300">
+            <p class="resume__steps__item__description-name b">Secondary school certificate</p>
+            <p class="resume__steps__item__description-place b">Salimganj A R school, Dhaka, BD</p>
+            <p class="resume__steps__item__description-text">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>
+        </div>
+        <div class="resume__steps__item__data b">2004 - 2010</div>
+    </div>
+</div>
+
+                    
+                      
+<div class="resume__steps__item ">
+    <div class="item_wrap clearfix">
+        <div class="resume__steps__item__description" data-aos="fade-right" data-aos-duration="1300">
+            <p class="resume__steps__item__description-name b">Secondary school certificate</p>
+            <p class="resume__steps__item__description-place b">Salimganj A R school, Dhaka, BD</p>
+            <p class="resume__steps__item__description-text">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>
+        </div>
+        <div class="resume__steps__item__data b">2004 - 2010</div>
+    </div>
+</div>
+
+                    
+                </div>
+                <h3 class="subtitle resume-subtitle">Experience</h3>
+                <div class="resume__steps">
+                    
+                        
+<div class="resume__steps__item even">
+    <div class="item_wrap clearfix">
+        <div class="resume__steps__item__description" data-aos="fade-right" data-aos-duration="1300">
+            <p class="resume__steps__item__description-name b">Secondary school certificate</p>
+            <p class="resume__steps__item__description-place b">Salimganj A R school, Dhaka, BD</p>
+            <p class="resume__steps__item__description-text">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>
+        </div>
+        <div class="resume__steps__item__data b">2004 - 2010</div>
+    </div>
+</div>
+
+                    
+                        
+<div class="resume__steps__item ">
+    <div class="item_wrap clearfix">
+        <div class="resume__steps__item__description" data-aos="fade-right" data-aos-duration="1300">
+            <p class="resume__steps__item__description-name b">Secondary school certificate</p>
+            <p class="resume__steps__item__description-place b">Salimganj A R school, Dhaka, BD</p>
+            <p class="resume__steps__item__description-text">I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend.</p>
+        </div>
+        <div class="resume__steps__item__data b">2004 - 2010</div>
+    </div>
+</div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <div class="skills-wrapper">
+    <div class="skills" id="skills">
+        <h2 class="skills__title" data-aos="flip-up" data-aos-duration="1300">Skills</h2>
+        <div class="skills__title__i">
+            <svg class="title-svg" xmlns="http://www.w3.org/2000/svg" width="113" height="14" viewBox="0 0 113 14">
+                <path id="title-svg-icon" fill="#3a4149" d="M50.61.56l5.664 5.65c.39.39.39 1.02 0 1.41l-5.665 5.65c-.392.39-1.026.39-1.417
+                 0l-5.665-5.65c-.392-.39-.392-1.02 0-1.41L49.193.56c.39-.39 1.025-.39 1.416 0zM65.63.56l5.666 5.65c.39.39.39 1.02
+                  0 1.41l-5.665 5.65c-.39.39-1.025.39-1.416 0L58.55 7.62c-.392-.39-.392-1.02 0-1.41L64.213.56c.39-.39 1.026-.39
+                   1.417 0zM78.943 6.92v-1h34.05v1zM.83 6.92v-1h34.05v1z"
+                />
+            </svg>
+        </div>
+        <div class="range-skills">
+            
+                <div class="range-skills__item">
+                    <span class="range-skills__title">UX Design</span>
+                    <div class="range-skills__number"><span class="range-skills__data">95</span><span class="range-skills__percent">%</span></div>
+                </div>
+            
+                <div class="range-skills__item">
+                    <span class="range-skills__title">Brendign Design</span>
+                    <div class="range-skills__number"><span class="range-skills__data">50</span><span class="range-skills__percent">%</span></div>
+                </div>
+            
+                <div class="range-skills__item">
+                    <span class="range-skills__title">Visual Design</span>
+                    <div class="range-skills__number"><span class="range-skills__data">40</span><span class="range-skills__percent">%</span></div>
+                </div>
+            
+                <div class="range-skills__item">
+                    <span class="range-skills__title">Motion Graphic</span>
+                    <div class="range-skills__number"><span class="range-skills__data">60</span><span class="range-skills__percent">%</span></div>
+                </div>
+            
+                <div class="range-skills__item">
+                    <span class="range-skills__title">Visual Design</span>
+                    <div class="range-skills__number"><span class="range-skills__data">75</span><span class="range-skills__percent">%</span></div>
+                </div>
+            
+                <div class="range-skills__item">
+                    <span class="range-skills__title">Motion Graphic</span>
+                    <div class="range-skills__number"><span class="range-skills__data">85</span><span class="range-skills__percent">%</span></div>
+                </div>
+            
+        </div>
+        <div class="skills__sub-title" data-aos="flip-up" data-aos-duration="1300">More skills</div>
+        <div id="tutor-statistic" class="about-skills">
+            
+            <div class="about-skills__circle-wrap">
+            <span class="about-skills__circle">
+                <svg class="circle-empty" xmlns="http://www.w3.org/2000/svg" width="140" height="140">
+                    <defs>
+                        <clipPath id="a">
+                            <path fill="#fff" d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"/>
+                        </clipPath>
+                    </defs>
+                    <path fill="none" stroke="#3a4149" stroke-width="16" stroke-miterlimit="50"
+                          d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"
+                          stroke-dasharray="0" clip-path="url(&quot;#a&quot;)" transform="translate(-280 -3585)"/>
+                </svg>
+                <svg class="circle-colored" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+                    <path class="semi-circle-animate" fill="none" stroke="#68c3a3" stroke-width="8" stroke-miterlimit="50"
+                          d="M70 4a66 66 0 1 1-56.6 32" stroke-dasharray="0"/>
+                </svg>
+            </span>
+
+            <div class="psevdo-number">
+                    <p class="psevdo-number__data">45</p>
+                    <span>%</span>
+                    </div>
+                    <span class="about-skills__title">
+                    Leadership
+                </span>
+            </div>
+            
+            <div class="about-skills__circle-wrap">
+            <span class="about-skills__circle">
+                <svg class="circle-empty" xmlns="http://www.w3.org/2000/svg" width="140" height="140">
+                    <defs>
+                        <clipPath id="a">
+                            <path fill="#fff" d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"/>
+                        </clipPath>
+                    </defs>
+                    <path fill="none" stroke="#3a4149" stroke-width="16" stroke-miterlimit="50"
+                          d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"
+                          stroke-dasharray="0" clip-path="url(&quot;#a&quot;)" transform="translate(-280 -3585)"/>
+                </svg>
+                <svg class="circle-colored" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+                    <path class="semi-circle-animate" fill="none" stroke="#68c3a3" stroke-width="8" stroke-miterlimit="50"
+                          d="M70 4a66 66 0 1 1-56.6 32" stroke-dasharray="0"/>
+                </svg>
+            </span>
+
+            <div class="psevdo-number">
+                    <p class="psevdo-number__data">67</p>
+                    <span>%</span>
+                    </div>
+                    <span class="about-skills__title">
+                    Leadership
+                </span>
+            </div>
+            
+            <div class="about-skills__circle-wrap">
+            <span class="about-skills__circle">
+                <svg class="circle-empty" xmlns="http://www.w3.org/2000/svg" width="140" height="140">
+                    <defs>
+                        <clipPath id="a">
+                            <path fill="#fff" d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"/>
+                        </clipPath>
+                    </defs>
+                    <path fill="none" stroke="#3a4149" stroke-width="16" stroke-miterlimit="50"
+                          d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"
+                          stroke-dasharray="0" clip-path="url(&quot;#a&quot;)" transform="translate(-280 -3585)"/>
+                </svg>
+                <svg class="circle-colored" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+                    <path class="semi-circle-animate" fill="none" stroke="#68c3a3" stroke-width="8" stroke-miterlimit="50"
+                          d="M70 4a66 66 0 1 1-56.6 32" stroke-dasharray="0"/>
+                </svg>
+            </span>
+
+            <div class="psevdo-number">
+                    <p class="psevdo-number__data">80</p>
+                    <span>%</span>
+                    </div>
+                    <span class="about-skills__title">
+                    Leadership
+                </span>
+            </div>
+            
+            <div class="about-skills__circle-wrap">
+            <span class="about-skills__circle">
+                <svg class="circle-empty" xmlns="http://www.w3.org/2000/svg" width="140" height="140">
+                    <defs>
+                        <clipPath id="a">
+                            <path fill="#fff" d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"/>
+                        </clipPath>
+                    </defs>
+                    <path fill="none" stroke="#3a4149" stroke-width="16" stroke-miterlimit="50"
+                          d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"
+                          stroke-dasharray="0" clip-path="url(&quot;#a&quot;)" transform="translate(-280 -3585)"/>
+                </svg>
+                <svg class="circle-colored" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+                    <path class="semi-circle-animate" fill="none" stroke="#68c3a3" stroke-width="8" stroke-miterlimit="50"
+                          d="M70 4a66 66 0 1 1-56.6 32" stroke-dasharray="0"/>
+                </svg>
+            </span>
+
+            <div class="psevdo-number">
+                    <p class="psevdo-number__data">80</p>
+                    <span>%</span>
+                    </div>
+                    <span class="about-skills__title">
+                    Leadership
+                </span>
+            </div>
+            
+            <div class="about-skills__circle-wrap">
+            <span class="about-skills__circle">
+                <svg class="circle-empty" xmlns="http://www.w3.org/2000/svg" width="140" height="140">
+                    <defs>
+                        <clipPath id="a">
+                            <path fill="#fff" d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"/>
+                        </clipPath>
+                    </defs>
+                    <path fill="none" stroke="#3a4149" stroke-width="16" stroke-miterlimit="50"
+                          d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"
+                          stroke-dasharray="0" clip-path="url(&quot;#a&quot;)" transform="translate(-280 -3585)"/>
+                </svg>
+                <svg class="circle-colored" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+                    <path class="semi-circle-animate" fill="none" stroke="#68c3a3" stroke-width="8" stroke-miterlimit="50"
+                          d="M70 4a66 66 0 1 1-56.6 32" stroke-dasharray="0"/>
+                </svg>
+            </span>
+
+            <div class="psevdo-number">
+                    <p class="psevdo-number__data">80</p>
+                    <span>%</span>
+                    </div>
+                    <span class="about-skills__title">
+                    Leadership
+                </span>
+            </div>
+            
+            <div class="about-skills__circle-wrap">
+            <span class="about-skills__circle">
+                <svg class="circle-empty" xmlns="http://www.w3.org/2000/svg" width="140" height="140">
+                    <defs>
+                        <clipPath id="a">
+                            <path fill="#fff" d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"/>
+                        </clipPath>
+                    </defs>
+                    <path fill="none" stroke="#3a4149" stroke-width="16" stroke-miterlimit="50"
+                          d="M349.5 3585c38.384 0 69.5 31.34 69.5 70s-31.116 70-69.5 70-69.5-31.34-69.5-70 31.116-70 69.5-70z"
+                          stroke-dasharray="0" clip-path="url(&quot;#a&quot;)" transform="translate(-280 -3585)"/>
+                </svg>
+                <svg class="circle-colored" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+                    <path class="semi-circle-animate" fill="none" stroke="#68c3a3" stroke-width="8" stroke-miterlimit="50"
+                          d="M70 4a66 66 0 1 1-56.6 32" stroke-dasharray="0"/>
+                </svg>
+            </span>
+
+            <div class="psevdo-number">
+                    <p class="psevdo-number__data">80</p>
+                    <span>%</span>
+                    </div>
+                    <span class="about-skills__title">
+                    Leadership
+                </span>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    <div class="works-wrapper section--wtitle" id="work">
+    <div class="works">
+        <h2 class="works__title title" data-aos="flip-up" data-aos-duration="1300">Works</h2>
+        <div class="works__title__i title__i">
+            <svg class="title-svg" xmlns="http://www.w3.org/2000/svg" width="113" height="14" viewBox="0 0 113 14">
+                <path id="title-svg-icon" fill="#e1e1e1" d="M50.61.56l5.664 5.65c.39.39.39 1.02 0 1.41l-5.665 5.65c-.392.39-1.026.39-1.417
+                 0l-5.665-5.65c-.392-.39-.392-1.02 0-1.41L49.193.56c.39-.39 1.025-.39 1.416 0zM65.63.56l5.666 5.65c.39.39.39 1.02
+                  0 1.41l-5.665 5.65c-.39.39-1.025.39-1.416 0L58.55 7.62c-.392-.39-.392-1.02 0-1.41L64.213.56c.39-.39 1.026-.39
+                   1.417 0zM78.943 6.92v-1h34.05v1zM.83 6.92v-1h34.05v1z"
+                />
+            </svg>
+        </div>
+        <ul class="works-list">
+            <li class="works-list__item active">
+                <a href="#" class="works-list__link">All</a>
+            </li>
+            <li class="works-list__item">
+                <a href="#" class="works-list__link">Design</a>
+            </li>
+            <li class="works-list__item">
+                <a href="#" class="works-list__link">Web</a>
+            </li>
+            <li class="works-list__item">
+                <a href="#" class="works-list__link">Interface</a>
+            </li>
+            <li class="works-list__item">
+                <a href="#" class="works-list__link">Identety</a>
+            </li>
+        </ul>
+        <div class="works-block-wrapper clearfix">
+            <div class="works-block-inner active clearfix">
+                <div class="works-block" data-aos="flip-right" data-aos-duration="2300">
+                    <img src="img/work1.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block" data-aos="flip-right" data-aos-duration="2500">
+                    <img src="img/work2.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block" data-aos="flip-right" data-aos-duration="2700">
+                    <img src="img/work3.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block" data-aos="flip-right" data-aos-duration="3000">
+                    <img src="img/work4.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block" data-aos="flip-left" data-aos-duration="3000">
+                    <img src="img/work5.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block" data-aos="flip-left" data-aos-duration="2700">
+                    <img src="img/work6.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block" data-aos="flip-left" data-aos-duration="2500">
+                    <img src="img/work7.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block" data-aos="flip-left" data-aos-duration="2300">
+                    <img src="img/work8.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="works-block-inner clearfix">
+                <div class="works-block">
+                    <img src="img/work1.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work2.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work3.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work4.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work5.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="works-block-inner clearfix">
+                <div class="works-block">
+                    <img src="img/work1.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work2.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work2.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work3.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work5.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work4.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work3.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work3.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="works-block-inner clearfix">
+                <div class="works-block">
+                    <img src="img/work2.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work3.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work4.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work5.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work6.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work7.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work8.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="works-block-inner clearfix">
+                <div class="works-block">
+                    <img src="img/work1.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work2.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work3.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work4.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work5.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work4.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="works-block-inner clearfix">
+                <div class="works-block">
+                    <img src="img/work1.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work2.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work3.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work4.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="works-block">
+                    <img src="img/work5.png" alt="regular img">
+                    <div class="content">
+                        <div class="top-side">
+                            <div class="show-more">
+                                <a href="#">
+                                    <img src="img/loop.png" alt="regular img">
+                                </a>
+                            </div>
+                            <div class="link">
+                                <a href="#">
+                                    <img src="img/link.png" alt="regular img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="bottom-side">
+                            <p>Project title</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+<section id="advantages" class="section">
+    <div class="wrap">
+        <div class="container">
+            <ul>
+                
+                 
+<li class="advantages__item" data-aos="fade-right" data-aos-duration="1300">
+    <figure class="advantages__item__img"></figure>
+    <p class="advantages__item__quantity b numundefined">07</p>
+    <p class="advantages__item__name b"> years Experience</p>
+</li>
+
+                
+                 
+<li class="advantages__item" data-aos="fade-right" data-aos-duration="1300">
+    <figure class="advantages__item__img"></figure>
+    <p class="advantages__item__quantity b numundefined">651</p>
+    <p class="advantages__item__name b">projects done</p>
+</li>
+
+                
+                 
+<li class="advantages__item" data-aos="fade-right" data-aos-duration="1300">
+    <figure class="advantages__item__img"></figure>
+    <p class="advantages__item__quantity b numundefined">251</p>
+    <p class="advantages__item__name b">happy clients</p>
+</li>
+
+                
+                 
+<li class="advantages__item" data-aos="fade-right" data-aos-duration="1300">
+    <figure class="advantages__item__img"></figure>
+    <p class="advantages__item__quantity b numundefined">05</p>
+    <p class="advantages__item__name b">awards won</p>
+</li>
+
+                
+            </ul>
+        </div>
+    </div>
+</section>
+    
+
+
+<section id="blog" class="section section--wtitle">
+    <div class="wrap">
+        <div class="container">
+            <h2 class="title" data-aos="flip-up" data-aos-duration="1300">Latest POST</h2>
+            <div class="title__i">
+                <svg class="title-svg" xmlns="http://www.w3.org/2000/svg" width="113" height="14" viewBox="0 0 113 14">
+                    <path id="title-svg-icon" fill='#e1e1e1' d="M50.61.56l5.664 5.65c.39.39.39 1.02 0 1.41l-5.665 5.65c-.392.39-1.026.39-1.417
+                 0l-5.665-5.65c-.392-.39-.392-1.02 0-1.41L49.193.56c.39-.39 1.025-.39 1.416 0zM65.63.56l5.666 5.65c.39.39.39 1.02
+                  0 1.41l-5.665 5.65c-.39.39-1.025.39-1.416 0L58.55 7.62c-.392-.39-.392-1.02 0-1.41L64.213.56c.39-.39 1.026-.39
+                   1.417 0zM78.943 6.92v-1h34.05v1zM.83 6.92v-1h34.05v1z"
+                    />
+                </svg>
+            </div>
+            <div class="blog-content">
+                
+                   
+<article class="blog__item">
+    <div class="blog__item__img__wrap">
+        <img src="./img/article_1.png" alt=""  class="blog__item__img">
+    </div>
+    <div class="blog__item__content">
+        <p>Print design, Photoshop</p>
+        <p>How to creat a print ready brochure using photoshop</p>
+        <div class="blog_item__content__fitures">
+            <p class="blog_item__author">Bin Burhan</p>
+            <p class="blog_item__day">06 Jan 2015</p>
+            <p class="blog_item__share">30</p>
+            <p class="blog_item__comment">05</p>
+        </div>
+    </div>
+</article>
+
+                
+                   
+<article class="blog__item">
+    <div class="blog__item__img__wrap">
+        <img src="./img/article_2.png" alt=""  class="blog__item__img">
+    </div>
+    <div class="blog__item__content">
+        <p>Print design, Photoshop</p>
+        <p>How to creat a print ready brochure using photoshop</p>
+        <div class="blog_item__content__fitures">
+            <p class="blog_item__author">Bin Burhan</p>
+            <p class="blog_item__day">06 Jan 2015</p>
+            <p class="blog_item__share">30</p>
+            <p class="blog_item__comment">05</p>
+        </div>
+    </div>
+</article>
+
+                
+                   
+<article class="blog__item">
+    <div class="blog__item__img__wrap">
+        <img src="./img/article_3.png" alt=""  class="blog__item__img">
+    </div>
+    <div class="blog__item__content">
+        <p>Print design, Photoshop</p>
+        <p>How to create a print ready brochure using photoshop</p>
+        <div class="blog_item__content__fitures">
+            <p class="blog_item__author">Bin Burhan</p>
+            <p class="blog_item__day">06 Jan 2015</p>
+            <p class="blog_item__share">30</p>
+            <p class="blog_item__comment">05</p>
+        </div>
+    </div>
+</article>
+
+                
+            </div>
+            <div class="button">
+                <button class="blog__button">
+                    <a href="#blog" class="blog__button__link">View more</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="get_hired" class="section bcg-parallax">
+    <div class="bcg"></div>
+    <div class="wrap content-wrapper">
+        <div class="container">
+            <h2 class="subtitle">I'M AVAILABLE FOR FREELANCE PROJECT</h2>
+            <div class="button">
+                <button class="get_hired__button">
+                    <a href="#get_hired" class="get_hired__button__link">get hired</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+    
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATlf2ISHehzogzElQi8MwOsdQXM5Oi6bk&callback=initMap">
+</script>
+<script>
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+        // Basic options for a simple Google Map
+        var mapOptions = {
+            zoom: 11,
+            center: new google.maps.LatLng(40.6700, -73.9400),
+            styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+        };
+        var mapElement = document.getElementById('map');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(40.6700, -73.9400),
+            map: map,
+            title: 'Snazzy!'
+        });
+    }
+</script>
+
+<section id="contacts" class="section section--wtitle">
+    <div class="wrap">
+        <div class="container">
+            <h2 class="title" data-aos="flip-up" data-aos-duration="1300">Get in touch</h2>
+            <div class="title__i">
+                <svg class="title-svg" xmlns="http://www.w3.org/2000/svg" width="113" height="14" viewBox="0 0 113 14">
+                    <path id="title-svg-icon" fill='#e1e1e1' d="M50.61.56l5.664 5.65c.39.39.39 1.02 0 1.41l-5.665 5.65c-.392.39-1.026.39-1.417
+                 0l-5.665-5.65c-.392-.39-.392-1.02 0-1.41L49.193.56c.39-.39 1.025-.39 1.416 0zM65.63.56l5.666 5.65c.39.39.39 1.02
+                  0 1.41l-5.665 5.65c-.39.39-1.025.39-1.416 0L58.55 7.62c-.392-.39-.392-1.02 0-1.41L64.213.56c.39-.39 1.026-.39
+                   1.417 0zM78.943 6.92v-1h34.05v1zM.83 6.92v-1h34.05v1z"
+                    />
+                </svg>
+            </div>
+            <div class="contacts-content">
+                <div class="contacts-content__form">
+                    <p class="form_title">SEND ME A MESSAGE</p>
+                    
+                        
+<form class="form" action="feedback.php" method="POST">
+    
+<div class="form-group">
+    <label class="form-label" for="Name_id">Name</label>
+    <input class="form-control" id="Name_id" name="Name" type="text" value="">
+</div>
+
+    
+<div class="form-group">
+    <label class="form-label" for="Email_id">Email</label>
+    <input class="form-control" id="Email_id" name="Email" type="email" value="">
+</div>
+
+    
+<div class="form-group">
+    <label class="form-label" for="Subject_id">Subject</label>
+    <input class="form-control" id="Subject_id" name="Subject" type="text" value="">
+</div>
+
+    
+<div class="form-group">
+    <label class="form-label" for="Message_id">Message</label>
+    <textarea class="form-control" name="Message" id="Message_id" cols="20" rows="5"></textarea>
+</div>
+
+</form>
+
+                    
+                </div>
+                <div class="contacts-content__map">
+                    <address>
+                        <div class="adr">
+                            <p class="title_adr">ADRESS/STREET</p>
+                            <span class="street-address">Nr. 6, 21 Awesome&nbsp;Street,</span><br>
+                            <span class="locality">London, </span>
+                            <span class="country-name">UK</span>
+                        </div>
+                        <div class="tel">
+                            <p class="title_tel">PHONE NUMBER</p>
+                            <span class="tel">+880&nbsp;1920980500</span><br>
+                            <span class="tel">+880&nbsp;1768760504</span>
+                        </div>
+                    </address>
+                    <div id="map"></div>
+                </div>
+                <button class="contacts__button">
+                    <a href="#contacts" class="contacts__button__link">Send a message</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+        </main>
+        <footer>
+            
+
+<p class="copyright">© TrendyTheme 2014 All rights reserved</p>
+
+
+
+
+
+
+
+        </footer>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <script
+              src="https://code.jquery.com/jquery-2.2.4.min.js"
+              integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+              crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+        <script src="js/progressbar.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/aos.js"></script>
+    </body>
+</html>
+

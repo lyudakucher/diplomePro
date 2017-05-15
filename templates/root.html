@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>MON JA CAI - User interface Designer</title>
+    </head>
+    <body>
+    <style>
+        body {
+            font-size: 14px;
+            margin: 0;
+        }
+        .main {
+            padding: 0;
+            text-align: left;
+         }
+        .main-container {
+            content: "";
+            text-align: left;
+            padding-left: 6%;
+        }
+        .main-content {
+            width: 51%;
+            background-color: #272b31;
+            padding-top: 151px;
+            display: table-cell;
+        }
+        .contact_1 {
+            color: white;
+            font-weight: 400;
+            line-height: 33px;
+        }
+        .main-contact {
+            width: 49%;
+            background-color: white;
+            height: 100%;
+            display: table-cell;
+        }
+        h1 {
+            color: #f8f8f8;
+            font-size: 4.28em;
+            font-weight: 700;
+            line-height: 1.316em;
+            text-transform: uppercase;
+        }
+        h2 {
+            color: #68c3a3;
+            font-size: 2em;
+            font-weight: 700;
+            line-height: 32px;
+            text-transform: uppercase;
+        }
+        .main-description {
+            color: #f7f7f7;
+            padding-top: 34px;
+            padding-bottom: 59px;
+        }
+        .main-sign {
+            padding-right: 237px;
+            padding-bottom: 45px;
+            background:  url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHcAAABDCAYAAACm0poxAAATcUlEQVR4Xu2dB5QUVRaGnSEMzDAwwIKICWVFxCEIJoQdBkFAEAQREVRkEQOg4BowgAoGxIhgWhED4iq7qIuYcAEV0FVxQXQxoaIYWCQNOQ/s9/d5Nae6p6q7qrpn6HbmnfNOdVW9cN/9X7j3vvuq0w5KwrBt27ZDCgsLu0JaF2IL4tHENcRX9+/ff3ONGjU2JCHZSUdSWjJRtH379kP37t17NTQNIWYR1xFXpKWlfQiozfmdT3wrOzv7bJ7tSSbak5GWpAAX4Kpu2bJlGICN5Xcm1xdh1pRq1ap9yO8dFuM2bdp0FfeT0tPTO/JuXjIyNJloOuDgAmruvn37pgGapt8ZFSpUuDsrK+tTJyatWbOmWpUqVTbx7sHq1atf75WR69evr165cuX+pD+Y6X5STk5Ogde8qZzugIK7efPmS2DeI8TtjNirWEtfiMbMrVu3HkxHWEWaiYB7jRfGq/NQ9sukbWTSjyTvfV7ypnqaAwIuzM4AqPFctb4uALBBjKbvYzFz48aNZzAl/4t0NwLQPbHSM42fzIzwNumqUNcsfp/H74HknRor7+/hfamDa0af1tT2MHsia+d1XPd6YSYjfTzpbgCoUxnlH0fLA7DHUO67pKlBh2jLdHwF95dzPapmzZorvdSX6mlKFVyAbcEo1dR7HABdA0ATvDKQ9FUAdzkA7UNabsx1p1teA+wc0tShvg67du1axlq9kfvp5L3Qa52pnq7UwGVKbckImgPDpOL0ZWp81Q/zWDt7A/BL5BlP3puiAPtHQBSwdUnfhbQLAft27m/hvjUd6iM/9aZy2lIB1wZsGgzuDIM/8cs0Ru0C8rQBpKaMvi+d8lNPTTrQfN41JeYJ2LVr12ZnZGSs4P5L7tv5rTfZ05sZLZO2FcCb/XZ6SxxcO7BMkR0RnJb4ZZglSEH8CwB7gVN+NZLRLd33NH5fTAd6TukYtXeSbxQxn7wC3jUUFBQ0qFix4qkkaE0Zh3KtT5Sx5Afyv0Z+Sd1JEYzsIo1hILEmUUvW7dD4D4vAEgUXAuoB6GIqqxoUWJhcEdAWUsYpEN8M4pc5cZeRLTAvIt5ML75baTZs2HBEpUqVvqKMT3iW75SPjnM0o/183vUknmRLs4361uue/GJeNvcPUf9fDjS68CMfmv4GPTlcn+D6HTRdwu+WXM+mrbNEY4mBa6ZISauaIv9Ehf8OwhRAG0S+p4hPUMYVLsBKb72OOIU0l1ppyKs1ujfgNUMq/6/13KhiPTXCeXameS4J+j2ezeX6DVL1cqTq7XrHiM5kRIuGYmUFaVM8eSwrHWW8i6l2YK1atX4yHVBWPg2kDDpgIwAvLBFwYVAaFb1hGNfTr/BkNZ4y6lDWUu6zYG5uZmbmL5GMIc0VpHmc5wtoVAdLrWLW6MBsIaDupf4b7PnIcy55ZvBsrToOv18hzVLyutqr6Sg3klYzwvWkvT8egILmtbX1edp6sTSHiHaFhE6et+P9ghIBFyIeopIRVDKMSh4L2hgYqvWjD3EQDH0mshyzFs/m+U+YLdtgtpT16iCzqyShbRe9uyW9WybLoqDlgpHZaseOHe/Vq1dvmxf6oOVN0nWkTc1p01de8iQyDSO2G3W/TpnTDLBhwpPqMoPhN9LdSpo7Ew4uRPSncK0HE6lAFqhAwSqHzK8DbPfIQgCwPgBJOMtk2s1j2tUIDwWAkJrVg9gm6HJgr49OdCJ1LOLZwlgSt5ajRNuuaY9Mp2rrp/C0E7wt2kyx02k0g40802x1U0LBNeY+SaSLIKJzNENDNMTNyPuMNIWMvFOsdcXKw6xQmV76jsAj9qIhM23ASgceR91joGFsoJ5ly0Rd6Yz02VzPiDYTAcAfxFTiucR3du7ceWHdunW3JqD+DNoqnjZiaWrmtDRZddCxOtEJ34bO3rT9lYSBaxr3HyrKYUQ1j8fER1kC62zWzM6MAtmSwwKNnQizhxPvROW5JbJx3L9M4/pE6n1BGG0TYGQRO4GO9HVkOUbdm87zY4gSzI4ktiXtB5FpJcxBv6RaqWxrAGMJtH7hRpulypG2K219yy2d4f/npPuNeqVZ7E4kuKH1kUL72nUtvwyFSOluD0DkWBozxgFYS2iYw1TcxRIqyNea33PJ9z2dK4/OpekprmDMpTKeZBM/gmmtXYDV5kRtYg/qrwUd2pg4jfQf2tMDlJg+hWe5tuffG3NqMfu6Tb+fRJoRbo2xdr4ou4rMrfBNqlFiVCGIvoiCpWdO8LoV50QoAJ3G8w9g0DzK0TQYJjSYtUcbBht415oGy/VGgoRs1fMk7dobFw+yZiRIfdNoPIiyb5GQYi+TetsbqbsGz3tLvzTq1zlMoUcyhf5spTc6vwSxQsoaxfVbaM1g5G53Mq5o/WQP+gtJ/+TNrV+/fkgtswfNAtQ3hDTaIfuV+04WsAkB1zBB5sCNEHl8NHUiGrMpRz1/MfllomwFo+RiUxR4VgFmahSpA0hvfl8vzZSo6SoLZuUFsYA5MC2dumQI6EZ8gHgtMUyls+nf8ueS4eB940zwM7T+wP1JNKXQKts2vZ7sxfxK+U+Q9zLK6kJ6zQxhgfK6Ur52yZqSZjqdZITV2a2EcU/LEKHGayoNrM+KGJuEW2w603uYLcP/7cSi3SSe5XGv9bkSsatsyZFMCHJvMRbmaYtwMYyTLBGyVRsd/i7uJbitoEP1sToU+c7i2WukuQNAbrXq5r4StH7O/V7KkFEnamCkdqRcbbJMJv3l9sSUJTPrKzyT8eVH7ke5OTnEBS6j5igark32dyGiQyyi3d5D7CgJR7y/lnIejEzH+9N5P1drqlQB0xl6cZWt9yfe9fEyGrzQR123Ud4Y6gqtc9y3416WK41i2W8f5qq1/kWeDbfPMKR9nmcX8K6p3UxqZqV1ysvz4dHoWL16dRbTuUys1dHdc9Hd/xcBrmaVkdSznbqfpExHtUh54gKXqWEshd9KRWfCXBkTfAfLkkQ5jpsC0htp5FLqyKYjHYcQ9RvM0jR5P3mW8OysSAb4JsJkgGlDqedRbp8DhEGaVvHIPAx17Fue7RbDiVtJI/dagVwUjLlVa6yk33xL0DMdUUuOlpl7AESWLtcAT9WxbiPGJZjGBe6qVasyLUsNDNceqm9XU8M4OcMVMP2d7CThAqQkzwHyeATED+gMT8PcfjybuWfPnotr1669OSiY9nzUI6OHjB9v0q5etEdghgLvdD+EeucB9IuRerdJI38wScLnAOA/7WVL8KHjTKaMWZTturNEmiaklQ18NmVopogrBB65MLkp64LWkfshxLMnokUtjUiHaVK42wNcSzqIygoLvJdh/1nSqDfPpD7pkvLCGEN6bcAXM8EF4Qb1yBii9fQzTJJtvZokbW2RLV2gZAHesfaO4ZUe0wG00XICHf04OvqPXvO6pQsMrlkH50FUf6Yo+UT5CjBURnhNUZfSOdTjI4E9lgfa5ZC6IwFCU/Fq6htMfdqUSEiw7Tevo5O1o9Os9luwKUOSvmy6d/jNr/TWkqB1PHLKD1Ke8gQG11or3axI0QiyqRHPAKy29MKCJFLKf5vrGbYXL7H2Dk/U+qpyzQbCIkCpBrD5TrOHF8bSnqdJN4Ap+2inKTtWGcbgLx14NZ2jZZCR71RHYHAhSBvGmkYGA5D2Oj0FGNqMDiGGfoH9Nb9OnTpbIjPCLO3NWr7FklBvkq3UUwUeE0knxf1mIWXrmIpMhYH2m43A94vWY8rQuu072GaxkLrluwCXDIHBNW4e31Du1xAk15SYwexayN56OEztabfMSBekkdpSG8Z7CROajifgufioUweIWVmMBNT1Gkmkl8alnyPd9pOkD/1Rbb9u5BhPEKk+L8HHAV7aJd4zg22OpgapnMDgKrO1eUzD/s6UOUJqSjTiYKjWVkmV2i3Zwghui4kNoXdPSBrlWWOTX+tePo1V50l4AJBH1IkU6WCB95tFGG2S/biesQ/v8kus0QYuwFzZINqOj1UuvNaOmNb3VfBbB+JcXXzjAtcALD1XW2vyOZIqIdvwp/wO2yDnmSTSybbGTyHNSumMPKtK1H5pLeJRPOsebQfELwPt6WGMVBoBGpcdXGWyNSnJdgnlhe1OeaUPYCU0fi3dmvZe6SWf5BHyyRFCPt/Sxwe7qaFxg2t6r3ZkrpIxg/scByK141HR9vwpRuVgGC1wd5H3UmIBI1m245X8fozntYl/TeRZXJgiJzjpoLNhinp9kS7rhbGRaWwGhyaWzu+nHDODDEUQa+BXEKMtcvW5nBHfmBH/q1O9CQHXKlims6pVqx7PvYwaOoop19B9Eu+51jHplsGIkyBO6+5y3o0AwEnca+TavQ+V/Ek6wWX6IYmSUZKNHVc+yL6DGSWyEWvKP5VyQ56NQYORH2S5+o725NGWMH+mWOUah4RvaP+btP98I8M0ZHn70XIXilWGzjM7AUuZcpZrkVBwnYihd15Iw7XWyqdJU7MEmFkwWz5RA1FB5P4qN5onTf750hchUIaRurzrR5rb+K1DXFWIL8NMbTG62lQj6aAsGdt10qCR8bVyPCIai5n297ZNggGAM81PXqUlv5z2xtM2Te2VaI82QDQYNjjZlP2UD8+nU955JQKuUQ+aS0+lkqu5ZhJ/5nc9ppGGAHasdj007XK9h8bIpaa61i6AlzWqkMZLJWjCb53Qy+T3DK0t/O5P7AZD5bDmKVCW5foa5pLjKbNLIiMIqcMdHrk9GatcaQZ0NnX2qnTUFvyWy5A0DplSNVtJFQwUbE74oxMKLg2WI5ekYfkOy5FbQXuay4mHqTFE9VhZm/bTsGOYjsbRWDnSFXk44id8JIDLnUUjVVOpdl/06QTt6crDYib3ckAPBU3ZXDTad1LmSDpBkVmSjtZKW3a8e5wOMTQQxyIymWlPU/JS6JA65SuYTQbt9mhp0AzUkPgqHX8Yuj9Nr3AObWhBrCjhlDV5hpc12drIoayQ/3ZCwDVbf/IuELAKkpol+f4JAq9EZJ8M8PIYmMgzrXl61wEC3heQUgPsOq+xWwvMadh6r7NsvZIUAVJT6uHEHoz6HQDXl9+hzkT5Ye4opjPId7kxaZskyisRJsqVRsC8Ad09/K63ph3SHHTiUDLEEUS5CK2mLMvxXi63Evg0SLQTNTTa9G8ddiOtJOg/i6a4wQU0ASqxPBsCZNifwBGOVfQ2gSDhSY7i+0gn70BtDhxCLDryYDpD2IVy0iG2gZPwRDnax1U9lW2ZFpFHPldhU7W1F0v9ceuzdgINOM9yra/dmyBStzoeHbc+Augq6NQZJ+uQmlTEabt3716K/l+IcNWKtJKMJWwWeaBY9Bgh9l7yaFaaaoANzVyBwTUuJRqJ2vdcQhxpfYQEYHSEUl4Sx9t9euT/y5RD/dkyWwYOjOzmOntE+TIafOy2UQ/TZDk6U1uLfnd6YhGnDkiadNrp6eB4tPLosDdSjpzm7nJSqcxMId8xuRJ1p9Mv1nc+GER5PJMnjI6PjCavPESKQiBwAakh06FGz4nE8RSqzeWQzgghV/L7YU3HPNfG9wELgKu1VirZucwk2+Jxtz1gjTAVm50njXDZEbTe1yXKMU9tHEYHlyoZFnyDq1PrlCBPwzrEiwBQh61CQZvNXD6hsqU813rrS/dLNANtBnl5L86BppCLTqoGc8R0APzNpw0fM8DmRvtkky9wzecI3qFwhV6aHixGaZoCXAkv7fitb1b4PmCdaKYbfyQdz9ShbPk5S+UqM8EzuHZg4c7p9rVU3LI88wE2kJ21zHC8FBvqCVymN7m2hHxnnZy+jV66DGC/w6zWxsmBuhTbVF6V4UBMcI0KMx9wGwCenMWLnZUhjfTa7pL4WNccv1dRzvHS50BUcAGzMmqHnKylq54OcNq1CQuss32l3xLDHLFLvynlNUZyICq4ADcJ0PQxzX4AK9UnLBhdSyfUZPbLJZ3vzepySEqOA67gAmzo0wKRJj07KUzHoaMkpHM8z1JyZJeX7IUDjuCaU+vyw13HtHyCk4BkDlrLajLNq++PF4LK0ySOA47gMmp1krwz1RSzZapqrcWkkUXkEPTH5kF8fRPXhPKS3DhQDFxAOx/w5GT+gNu+IqN2ONN1yK5MmmIfIilnd3JwIAxco/Ysk2DEvmKuk0up7cNd+viGb/eS5Gh22aAiEtxxNFvnTl2/SUwH0FEOHWHU19xcv+VQNtiX3K0sApfpWF851bcUVgCajjQUM/obf6hp5TptcoNqUVcELiNSe4HyIXb0MzI6rbaaNpfrtCkErvHpWWlG7YlOG9CM2sd4PiTIwa/UYMXvj8rQyDWuMo4Hh/XeJkG7flzz98ea1G+RvhwjpzPtc8r9pdjBYePioeOFcidpFq8zd+qzLHVakGY+XaCPhoxjj3Z0JOnGP1enz3oArE7GlYcU4UAaI3MAa+lUHNdaRv5ZE8Ba34lwNWikSDvLJJmakvV5nW6cgz3CbrQwBg3psTrtrc/auR4VLJOcS4FG6zigTgOsZcrVOZ6iYOzLnYw/VDHPuhRoW5knUeDKWDEfcNtb3GCqftQ4OTt+jKTMcy1FGCBwdbZzPeA2Y5Tq0wUTpc/y7D6ejUyRdpST6cABrbmjZU7knT5kqe8EN5dTOets1M/YlXMz+TmQhudiDpLyVEjVv0xrFOsYpT69Ux5SnAP/BwHWVxETqwxDAAAAAElFTkSuQmCC') no-repeat;
+        }
+        .send {
+            margin-bottom: 20%;
+            width: 200px;
+            height: 57px;
+            background-color: transparent;
+            border: 0;
+            color: white;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 28px;
+            text-transform: uppercase;
+            margin-right: 34px;
+        }
+        .download {
+            margin-bottom: 5.24%;
+            width: 200px;
+            height: 57px;
+            background-color: transparent;
+            border: 0;
+            color: #f3f3f3;
+            font-family: Roboto;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 28px;
+            text-transform: uppercase;
+        }
+    </style>
+        <header>
+            
+        </header>
+        <main>
+            
+        </main>
+        <footer>
+            
+        </footer>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <script
+              src="https://code.jquery.com/jquery-2.2.4.min.js"
+              integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+              crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+        <script src="js/progressbar.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/aos.js"></script>
+    </body>
+</html>
+
